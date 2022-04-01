@@ -4,7 +4,7 @@ let properties = [
   { name: "longtitude", min: -124, max: -66, default: -95 },
 ];
 
-let categories = ["biomass", "coal", "gas", "oil", "cogeneration", "geothermal", "hydro", "nuclear", "solar", "storage", "waste", "wind"];
+let categories = ["Biomass", "Coal", "Gas", "Oil", "Cogeneration", "Geothermal", "Hydro", "Nuclear", "Solar", "Storage", "Waste", "Wind"];
 
 let INPUT_FILE = "/data/testing.csv"
 var categoryButtons = {};
@@ -175,7 +175,7 @@ function draw() {
   latitude = propertyControls["latitude"].value();
   longtitude = propertyControls["longtitude"].value();
 
-  if (loopCount > 0 && testingResultsComplete == false) {
+  if (loopCount > 1 && testingResultsComplete == false) {
     loopCount = 0;
     dataArrayIndex += 1;
     if (dataArrayIndex < dataArray.length) {
