@@ -1,11 +1,11 @@
 let properties = [
   { name: "megawatt", min: 1.0, max: 2570, default: 1285 },
-  { name: "latitude", min: 26, max: 56, default: 41 },
-  { name: "longtitude", min: -124, max: -66, default: -95 },
+  { name: "Latitude", min: 26, max: 56, default: 41 },
+  { name: "Longtitude", min: -124, max: -66, default: -95 },
 
 ];
 
-let categories = ["biomass", "coal", "gas", "oil", "cogeneration", "geothermal", "hydro", "nuclear", "solar", "storage", "waste", "wind"];
+let categories = ["Biomass", "Coal", "gGs", "Oil", "Cogeneration", "Geothermal", "Hydro", "Nuclear", "Solar", "Storage", "Waste", "Wind"];
 
 let INPUT_FILE = "data/training.csv";
 var categoryButtons = {};
@@ -72,7 +72,7 @@ function setup() {
 
   // This portion of the code sets up the inputs for the machine learning algorithm from the CSV file.
   const options = {
-    inputs: ['megawatt', 'latitude','longtitude'],
+    inputs: ['megawatt','Latitude','Longtitude'],
     outputs: ['fueltype'] ,
     inputs: 3, // This is the number of input values
     outputs: 1, //this is the number of output values
@@ -117,7 +117,7 @@ function dataLoaded() {
 
   // Set the options for training
   const trainingOptions = {
-    epochs: 200,
+    epochs: 100,
     batchSize: 12,
   };
   
@@ -138,14 +138,11 @@ function finishedTraining() {
 
 function classify() {
   console.log("begin classify");
-  mouthWidth = propertyControls["megawatt"].value();
-  mouthHeight = propertyControls["latitude"].value();
-  mouthCurve = propertyControls["longtitude"].value();
+  megawatt = propertyControls["megawatt"].value();
+  latitude = propertyControls["latitude"].value();
+  longtitude = propertyControls["longtitude"].value();
 
-  let input = [
-    megawatt,
-    latitude,
-    longtitude,
+  let input = [megawatt,Latitude,Longtitude,
   ];
   // console.log(input)
   nn.classify(input, handleResults);
