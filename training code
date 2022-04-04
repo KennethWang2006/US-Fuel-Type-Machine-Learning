@@ -139,11 +139,10 @@ function finishedTraining() {
 function classify() {
   console.log("begin classify");
   megawatt = propertyControls["megawatt"].value();
-  latitude = propertyControls["latitude"].value();
-  longtitude = propertyControls["longtitude"].value();
+  Latitude = propertyControls["Latitude"].value();
+  Longtitude = propertyControls["Longtitude"].value();
 
-  let input = [megawatt,Latitude,Longtitude,
-  ];
+  let input = [megawatt,Latitude,Longtitude,];
   // console.log(input)
   nn.classify(input, handleResults);
 }
